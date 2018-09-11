@@ -1,0 +1,13 @@
+.idea
+*lock
+.~lock.*
+
+# LibMuse
+BREC/android/app/libs/armeabi-v7a/libmuse_android.so
+BREC/android/app/libs/libmuse_android.jar
+
+# Personal apk keystore
+Brec_Project/BREC/android/app/my-release-key.keystore
+
+# Apk
+Brec_Project/BREC/android/app/build/outputs/apk
