@@ -1,8 +1,10 @@
 
 # Brec - Brain Recorder
 
-![Brec Logo](BrecLogo.png | width=100)
----
+<p align="center">
+    <img src="BrecLogo.png" width="300">
+</p>
+</br>
 
 An android app to view and record EEG data sent from the [Muse](http://www.choosemuse.com/) device.
 BREC allows you to enter information about recordings and subjects and save everything in a .csv file in the smartphone.
