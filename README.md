@@ -8,6 +8,9 @@
 
 An android app to view and record EEG data sent from the [Muse](http://www.choosemuse.com/) device.
 BREC allows you to enter information about recordings and subjects and save everything in a .csv file in the smartphone.
+</br>
+</br>
+For a simple preview see https://youtu.be/cLCyKiS3F8I on <b>YouTube</b>.
 
 ## Getting Started
 
