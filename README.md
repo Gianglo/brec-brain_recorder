@@ -12,9 +12,11 @@ BREC allows you to enter information about recordings and subjects and save ever
 </br>
 For a simple preview see https://youtu.be/cLCyKiS3F8I on <b>YouTube</b>.
 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
 
 ### Prerequisites
 
@@ -25,10 +27,20 @@ These instructions will get you a copy of the project up and running on your loc
 5. [Android Studio and SDK](https://developer.android.com/studio/)
 6. [Gradle Daemon](https://docs.gradle.org/2.9/userguide/gradle_daemon.html)
 
+
+## JDK fast configuration
+
+If there are any problems with jre / gradle use `java 1.8.0`, on linux you can do:
+- Install `java-1.8-0-openjdk-devel`(on Fedora/Red Hat) or `java-1.8-0-openjdk` (on Ubuntu/Debian)
+- Chose java version with `sudo alternative --config java`
+- Run `java -version` for see the java version
+
+
 ### Installing
 
 1. Download the LibMuse SDK from [Muse's developer website](http://developer.choosemuse.com/android). We've already taken care of integrating the sdk library into the app, so just make sure you end place libmuse_android.so in `<clonedRepoName>/Brec_Project/BREC/android/app/src/main/jniLib/armeabi-v7a/` and libmuse_android.jar in `<clonedRepoName/Brec_Project/BREC/android/app/libs/`
 2. run `sudo yarn install` in the BREC folder
+
 
 ## Deployment
 
@@ -47,6 +59,7 @@ You can generate a private signing key using `keytool`.
 
 This command prompts you for passwords for the keystore and key, and to provide the Distinguished Name fields for your key. It then generates the keystore as a file called `my-release-key.keystore`.
 
+
 ### Setting up gradle variables
 
 Place the `my-release-key.keystore` file under the `android/app` directory in your project folder.
@@ -61,34 +74,6 @@ MYAPP_RELEASE_STORE_PASSWORD=*****
 MYAPP_RELEASE_KEY_PASSWORD=*****
 ```
 
-### Adding signing config to your app's gradle config
-
-Edit the file `android/app/build.gradle` in your project folder and add the signing config,
-
-```
-...
-android {
-    ...
-    defaultConfig { ... }
-    signingConfigs {
-        release {
-            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
-                storeFile file(MYAPP_RELEASE_STORE_FILE)
-                storePassword MYAPP_RELEASE_STORE_PASSWORD
-                keyAlias MYAPP_RELEASE_KEY_ALIAS
-                keyPassword MYAPP_RELEASE_KEY_PASSWORD
-            }
-        }
-    }
-    buildTypes {
-        release {
-            ...
-            signingConfig signingConfigs.release
-        }
-    }
-}
-...
-```
 
 ### Generating the release APK
 
@@ -101,13 +86,16 @@ $ ./gradlew assembleRelease
 
 The generated APK can be found under `android/app/build/outputs/apk/app-release.apk`, and is ready to be distributed.
 
+
 ## Built With
 
 * [React Native](https://facebook.github.io/react-native/) 
 
+
 ## Contributing
 
 Thanks to NeuroTechX for their public project on github. -> [EEG101](https://github.com/NeuroTechX/eeg-101).
+
 
 ## License
 
