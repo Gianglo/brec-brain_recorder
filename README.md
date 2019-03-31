@@ -46,7 +46,9 @@ If there are any problems with jre / gradle use `java 1.8.0`, on linux you can d
 
 1. Connect an Android device with USB debug mode enabled. Because the LibMuse library depends on an ARM architecture, Brec will not build in an emulator
 2. Run `sudo react-native start` to start React packager
-3. In new terminal, run `adb reverse tcp:8081 tcp:8081` to ensure debug server is connected to your smartphone and then `sudo react-native run-android` to install Brec
+3. In new terminal, run `adb reverse tcp:8081 tcp:8081` to ensure debug server is connected to your smartphone
+(if this returns -> `error: insufficient permissions for device`, try `adb kill-server` and `adb start-server`)
+4. Then `sudo react-native run-android` to install Brec
 
 
 ## Generating a signed APK
